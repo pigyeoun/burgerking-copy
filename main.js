@@ -16,6 +16,7 @@ $(document).ready(function() {
   });
 
 //슬라이드
+var webimg = document.getElementsByClassName("slide");
 var a=1;
 var max=$(".slide_track").children().length;
 var slide_track = $(".slide_track");
@@ -42,6 +43,39 @@ $(".bt_pause").click(function() {
     clearInterval(auto_slide);
     auto_slide = setInterval(function(){animate("right");},4000);
   }
+});
+
+
+function webimg_line() {
+
+}
+$('.slide_swiper1').click(function(){
+  clearInterval(auto_slide);
+  auto_slide = setInterval(function(){animate("right");},4000);
+  a=1;
+  bt_active();
+  imgline();
+});
+$('.slide_swiper2').click(function(){
+  clearInterval(auto_slide);
+  auto_slide = setInterval(function(){animate("right");},4000);
+  a=2;
+  bt_active();
+  imgline();
+});
+$('.slide_swiper3').click(function(){
+  clearInterval(auto_slide);
+  auto_slide = setInterval(function(){animate("right");},4000);
+  a=3;
+  bt_active();
+  imgline();
+});
+$('.slide_swiper4').click(function(){
+  clearInterval(auto_slide);
+  auto_slide = setInterval(function(){animate("right");},4000);
+  a=4;
+  bt_active();
+  imgline();
 });
 
 
@@ -100,6 +134,32 @@ function bt_active() {
     $(".slide_swiper2").removeClass("bt_active");
     $(".slide_swiper3").removeClass("bt_active");
   }
+}
+function imgline() {
+  if (a==1) {
+    slide_track.append($(".slide_cloned1"));
+    slide_track.append($(".slide_cloned2"));
+    slide_track.append($(".slide_cloned3"));
+    slide_track.append($(".slide_cloned4"));
+  }else if (a==2) {
+    slide_track.append($(".slide_cloned2"));
+    slide_track.append($(".slide_cloned3"));
+    slide_track.append($(".slide_cloned4"));
+    slide_track.append($(".slide_cloned1"));
+  }
+  else if (a==3) {
+    slide_track.append($(".slide_cloned3"));
+    slide_track.append($(".slide_cloned4"));
+    slide_track.append($(".slide_cloned1"));
+    slide_track.append($(".slide_cloned2"));
+  }
+  else if (a==4) {
+    slide_track.append($(".slide_cloned4"));
+    slide_track.append($(".slide_cloned1"));
+    slide_track.append($(".slide_cloned2"));
+    slide_track.append($(".slide_cloned3"));
+  }
+
 }
 
 });
